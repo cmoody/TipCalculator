@@ -1,0 +1,53 @@
+//
+// Base styles
+// --------------------------------------------------
+
+// Use box sizing on all the things!
+* { 
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+// We fix position the body and scroll `.content`.
+body {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // font-family: $font-family-default;
+  // font-size: $font-size-default;
+  // line-height: $line-height-default;
+  height: 100%;
+  color: @black;
+  background-color: @white;
+}
+
+input {
+  color: @black;
+  margin-top: 10px;
+  height: 50px;
+  width: 100%;
+}
+
+// Wrapper to be used around all content not in .bar-title and .bar-tab
+.content {
+  position: fixed;
+  top: 50px; // Make this height of top nav // Except on onboarding
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Hack to force all relatively and absolutely positioned elements still render while scrolling
+// Note: This is a bug for "-webkit-overflow-scrolling: touch"
+.content > * {
+  -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+          transform: translateZ(0);
+}

@@ -1,0 +1,109 @@
+//
+// Bars
+// --------------------------------------------------
+
+.bar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  height: 50px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background-color: @blue;
+  color: @white;
+  -webkit-transition: all .3s ease-out;
+     -moz-transition: all .3s ease-out;
+      -ms-transition: all .3s ease-out;
+       -o-transition: all .3s ease-out;
+          transition: all .3s ease-out;
+}
+nav.bar.bar-tab {
+  border-top: 0;
+  bottom: -50px;
+}
+
+// Move to within bottom nav and pop in
+// .logged-in {
+//   -webkit-transform: translate3d(0,-50px,0);
+//      -moz-transform: translate3d(0,-50px,0);
+//       -ms-transform: translate3d(0,-50px,0);
+//        -o-transform: translate3d(0,-50px,0);
+//           transform: translate3d(0,-50px,0);
+// }
+
+// Nav bar
+// --------------------------------------------------
+
+// Bar docked to top of viewport for showing page title and actions
+.bar-nav {
+  .title {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .navbtn {
+    display: inline-block;
+    z-index: 9999;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 25px;
+    height: 25px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0.25em;
+      left: 0;
+      width: 1em;
+      height: 0.125em;
+      border-top: 0.375em double #fff;
+      border-bottom: 0.125em solid #fff;
+    }
+  }
+  &.logged-in {
+    -webkit-transform: translate3d(0,50px,0);
+       -moz-transform: translate3d(0,50px,0);
+        -ms-transform: translate3d(0,50px,0);
+         -o-transform: translate3d(0,50px,0);
+            transform: translate3d(0,50px,0);
+  }
+}
+
+.nav {
+  background-color: @black;
+  color: @white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 100%;
+  padding-top: 5px;
+  z-index: 9999;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  ul.list {
+    li {
+      &:first-child {
+        border-top: 0;
+      }
+    }
+  }
+}
+
+// Add transition
+body {
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  &.open {
+    -webkit-transform: translate3d(65%, 0, 0);
+            transform: translate3d(65%, 0, 0);
+  }
+}
