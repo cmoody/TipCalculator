@@ -5,7 +5,8 @@ require.config({
 	    'underscore': 'vendor/underscore/underscore',
 	    'hammerjs': 'vendor/jquery-hammerjs/jquery.hammer-full.min',
 	    'velocity': 'vendor/velocity/jquery.velocity.min',
-        'text' : 'vendor/requirejs-text/text',
+        'text': 'vendor/requirejs-text/text',
+        'backboneLocalstorage': 'vendor/backbone.localStorage/backbone.localStorage-min',
 	    'app': 'app',
         'libs': 'libs'
     },

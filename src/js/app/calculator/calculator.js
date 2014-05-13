@@ -27,20 +27,6 @@ define(function(require) {
 
 		render: function() {
 			this.$el.html(template());
-
-			// this.$el.find('.box').velocity(
-			// 	{
-			// 		translateY: [0, 50],
-			// 		translateX: [0, 50],
-			// 		opacity: 1
-			// 	}, 
-			// 	{
-			// 		duration: 1000, 
-			// 		delay: 2000, 
-			// 		easing: "easeInOutElastic",
-			// 		loop: 4
-			// 	}
-			// );
 			
 			return this;
 		},
@@ -71,6 +57,18 @@ define(function(require) {
 
 		submitTip: function() {
 			// what to do on submit?
+			this.$el.find('.dollar')
+				.velocity(
+					{
+						top: '0',
+						opacity: 1
+					}, 
+					{
+						duration: 2000,
+						easing: "easeInOutElastic",
+
+					}
+				).velocity("reverse", {delay: 1000, duration: 2000});
 		}
 	});
 

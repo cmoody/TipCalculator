@@ -1,0 +1,8 @@
+TipCalculator
+
+- Dollar slide in make it rain (white bg fade in/out dollar sign drop in?)
+	- clear fields
+
+- Nav animations 
+- Collection store for history (later use parse)
+- Shake to show settings (create lib included in main.js)
