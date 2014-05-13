@@ -15,11 +15,11 @@ define(function(require) {
 		events: {
 			'keyup .bill': 'calc',
 			'tap .percent': 'setPercent',
-			'tap .notip': 'noTip',
-			'tap .tip': 'submitTip'
+			'tap .btn-notip': 'noTip',
+			'tap .btn-tip': 'submitTip'
 		},
 
-		percent: 10,
+		percent: 0.10,
 
 		initialize: function() {
 			this.render();
@@ -47,8 +47,8 @@ define(function(require) {
 
 		calc: function() {
 			var bill = this.$el.find('.bill').val() || 0;
-			var tip = (bill * this.percent);
-			var total = (bill + total);
+			var tip = (bill * parseFloat(this.percent)).toFixed(2);;
+			var total = (parseFloat(bill) + parseFloat(tip)).toFixed(2);;
 
 			this.$el.find('.tip').val(tip);
 			this.$el.find('.total').val(total);
