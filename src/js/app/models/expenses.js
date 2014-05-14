@@ -18,7 +18,7 @@ define(function (require) {
 
     return {
         Model: Expense,
-        Collection: ExpensesCollection
+        Collection: new ExpensesCollection()
     };
 
 });

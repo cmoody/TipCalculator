@@ -4,6 +4,7 @@ define(function(require) {
 	// Libs
 	var $ = require('jquery');
 	var Backbone = require('backbone');
+	var Expenses = require('app/models/expenses');
 
 	// Template
     var tpl = require('text!app/calculator/tpl/index.html');
@@ -52,12 +53,24 @@ define(function(require) {
 		},
 
 		noTip: function() {
-
+			this.$('.tip').val(0);
+			this.submitTip();
 		},
 
 		submitTip: function() {
-			// what to do on submit?
-			this.$el.find('.dollar')
+			var $description = this.$('.description');
+			var $bill = this.$('.bill');
+			var $tip = this.$('.tip');
+			var $total = this.$('.total');
+
+			Expenses.Collection.create({
+				description: $description.val(),
+				bill: $bill.val(),
+				tip: $tip.val(),
+				total: $total.val()
+			});
+
+			this.$('.dollar')
 				.velocity(
 					{
 						top: '0',
@@ -69,6 +82,13 @@ define(function(require) {
 
 					}
 				).velocity("reverse", {delay: 1000, duration: 2000});
+
+			setTimeout(function() {
+				$description.val('');
+				$bill.val('');
+				$tip.val('');
+				$total.val('');
+			}, 2500);
 		}
 	});
 
