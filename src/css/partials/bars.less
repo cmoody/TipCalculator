@@ -12,11 +12,6 @@
   padding-left: 10px;
   background-color: @blue;
   color: @white;
-  -webkit-transition: all .3s ease-out;
-     -moz-transition: all .3s ease-out;
-      -ms-transition: all .3s ease-out;
-       -o-transition: all .3s ease-out;
-          transition: all .3s ease-out;
 }
 nav.bar.bar-tab {
   border-top: 0;
@@ -37,6 +32,8 @@ nav.bar.bar-tab {
 
 // Bar docked to top of viewport for showing page title and actions
 .bar-nav {
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
   .title {
     position: absolute;
     top: 20px;
@@ -77,18 +74,29 @@ nav.bar.bar-tab {
   }
 }
 
+.nav-closer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  z-index: 1;
+}
+
 .nav {
   background-color: @black;
   color: @white;
   position: absolute;
   top: 0;
   left: 0;
-  width: 65%;
+  width: 80%;
   height: 100%;
   padding-top: 5px;
-  z-index: 9999;
-  -webkit-transform: translate3d(-100%, 0, 0);
-          transform: translate3d(-100%, 0, 0);
+  z-index: 2;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transform: translate3d(-20%, 0, 0);
+          transform: translate3d(-20%, 0, 0);
   ul.list {
     margin: 0;
     padding: 0;
@@ -107,12 +115,18 @@ nav.bar.bar-tab {
   }
 }
 
-// Add transition
 body {
-  -webkit-transition-duration: .5s;
-          transition-duration: .5s;
   &.open {
-    -webkit-transform: translate3d(65%, 0, 0);
-            transform: translate3d(65%, 0, 0);
+    .nav {
+      -webkit-transform: translate3d(0%, 0, 0);
+              transform: translate3d(0%, 0, 0);
+    }
+    .nav-closer {
+      z-index: 4;
+    }
+    .content, .bar-nav {
+      -webkit-transform: translate3d(80%, 0, 0);
+              transform: translate3d(80%, 0, 0);
+    }
   }
 }

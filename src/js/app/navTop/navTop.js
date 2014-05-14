@@ -22,7 +22,8 @@ define(function (require) {
 
         events: {
             'tap .navbtn': 'navSlide',
-            'tap .list a': 'navSlide'
+            'tap .list a': 'navSlide',
+            'tap .nav-closer': 'navSlide'
         },
 
         initialize: function() {
