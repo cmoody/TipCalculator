@@ -33,18 +33,18 @@ define(function(require) {
 		},
 
 		calc: function() {
-			var bill = this.$el.find('.bill').val() || 0;
+			var bill = this.$('.bill').val() || 0;
 			var tip = (bill * parseFloat(this.percent)).toFixed(2);;
 			var total = (parseFloat(bill) + parseFloat(tip)).toFixed(2);;
 
-			this.$el.find('.tip').val(tip);
-			this.$el.find('.total').val(total);
+			this.$('.tip').val(tip);
+			this.$('.total').val(total);
 		},
 
 		setPercent: function(e) {
 			var elem = $(e.target);
 
-			this.$el.find('.active').removeClass('active');
+			this.$('.active').removeClass('active');
 			elem.addClass('active');
 
 			this.percent = elem.data('percent');
@@ -67,7 +67,9 @@ define(function(require) {
 				description: $description.val(),
 				bill: $bill.val(),
 				tip: $tip.val(),
-				total: $total.val()
+				total: $total.val(),
+				date: '',
+				geo: ''
 			});
 
 			this.$('.dollar')
