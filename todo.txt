@@ -13,5 +13,6 @@ https://github.com/alexgibson/shake.js/
 - Velocity Animations
 - D3 Charting
 
+- Lots of focus issues and keyboard overlay for calculator view
 - Maybe create own keyboard on screen.  Remove description or swap out keyboards
 	- Use tap/touch animation on keyboard
