@@ -16,3 +16,8 @@ https://github.com/alexgibson/shake.js/
 - Lots of focus issues and keyboard overlay for calculator view
 - Maybe create own keyboard on screen.  Remove description or swap out keyboards
 	- Use tap/touch animation on keyboard
+
+** Bugs **
+- navigation returns to home when opening drawer
+- history doesnt open always
+- Velocity animation broken when submitting in calculator
