@@ -57,7 +57,6 @@ define(function(require) {
 			this.submitTip();
 		},
 
-		// Need to add validation
 		submitTip: function() {
 			var $description = this.$('.description');
 			var $bill = this.$('.bill');
@@ -65,14 +64,9 @@ define(function(require) {
 			var $total = this.$('.total');
 			var coordinates;
 
-			Expenses.Collection.create({
-				description: $description.val(),
-				bill: $bill.val(),
-				tip: $tip.val(),
-				total: $total.val(),
-				date: new Date()
-				//coordinates: coordinates
-			});
+			if(!$description.val() || !$bill.val()) {
+				return;
+			}
 
 			this.$('.dollar')
 				.velocity(
@@ -86,6 +80,15 @@ define(function(require) {
 
 					}
 				).velocity("reverse", {delay: 1000, duration: 2000});
+
+			Expenses.Collection.create({
+				description: $description.val(),
+				bill: $bill.val(),
+				tip: $tip.val(),
+				total: $total.val(),
+				date: new Date()
+				//coordinates: coordinates
+			});
 
 			setTimeout(function() {
 				$description.val('');
