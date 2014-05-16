@@ -7,3 +7,11 @@ window.addEventListener('shake', function() {
       tweaksView.open();
     }, false);
 https://github.com/alexgibson/shake.js/
+
+
+- iScroll
+- Velocity Animations
+- D3 Charting
+
+- Maybe create own keyboard on screen.  Remove description or swap out keyboards
+	- Use tap/touch animation on keyboard

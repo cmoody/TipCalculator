@@ -33,8 +33,8 @@ define(function(require) {
 			var w = 200;                        //width
 		    var h = 200;                        //height
 		    var r = Math.min(w, h) / 2;   		//radius
-		    var color = d3.scale.ordinal().range(["rgb(0, 178, 89)", "#ff0"]);
-		    var data = [{"value": expenses.bill},{"value": expenses.tip}];
+		    var color = d3.scale.ordinal().range(["#ff0", "rgb(0, 178, 89)"]);
+		    var data = [{"value": expenses.tip},{"value": expenses.bill}];
 
 		    var vis = d3.select(this.$('#pieChart')[0])
 		        .append("svg:svg")              //create the SVG element inside the <body>

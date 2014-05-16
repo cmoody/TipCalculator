@@ -1,9 +1,7 @@
-<!-- Pie chart showing total, (bill, tip)pie pieces -->
-<!-- Bar chart over time .over year group by month. -->
 <h1>Total Spent</h1>
+<div class="pie-bill"><span>Bill</span>$<%= bill %></div>
+<div class="pie-tip"><span>Tip</span>$<%= tip %></div>
 <div id="pieChart"></div>
-<ul>
-	<li>Bill: <%= bill %></li>
-	<li>Tip: <%= tip %></li>
-	<li>Total: <%= total %></li>
-</ul>
+<div class="pie-total"><span>Total</span>$<%= total %></div>
+
+<!-- Bar chart over time .over year group by month. -->
