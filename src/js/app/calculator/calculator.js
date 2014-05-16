@@ -57,19 +57,21 @@ define(function(require) {
 			this.submitTip();
 		},
 
+		// Need to add validation
 		submitTip: function() {
 			var $description = this.$('.description');
 			var $bill = this.$('.bill');
 			var $tip = this.$('.tip');
 			var $total = this.$('.total');
+			var coordinates;
 
 			Expenses.Collection.create({
 				description: $description.val(),
 				bill: $bill.val(),
 				tip: $tip.val(),
 				total: $total.val(),
-				date: '',
-				geo: ''
+				date: new Date()
+				//coordinates: coordinates
 			});
 
 			this.$('.dollar')

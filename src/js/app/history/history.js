@@ -28,7 +28,8 @@ define(function(require) {
 			this.$el.html(template());
 
 			Expenses.Collection.each(function(expense) {
-
+				console.log(expense);
+				
 				var expenseView = new ExpenseView({model: expense});
 				$view.append(expenseView.$el);
 

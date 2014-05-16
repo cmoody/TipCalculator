@@ -12,7 +12,25 @@ define(function (require) {
 
         model: Expense,
 
-        localStorage: new Store('expenses')
+        localStorage: new Store('expenses'),
+
+        getTotals: function() {
+            var bill = 0;
+            var tip = 0;
+            var total = 0;
+
+            _(this.each(function(expense) {
+                bill += parseFloat(expense.get('bill'));
+                tip += parseFloat(expense.get('tip'));
+                total += parseFloat(expense.get('total'));
+            }));
+
+            return {
+                bill: parseFloat(bill).toFixed(2),
+                tip: parseFloat(tip).toFixed(2),
+                total: parseFloat(total).toFixed(2)
+            };
+        }
 
     });
 

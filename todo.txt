@@ -6,3 +6,7 @@ TipCalculator
 - Nav animations 
 - Collection store for history (later use parse)
 - Shake to show settings (create lib included in main.js)
+window.addEventListener('shake', function() {
+      tweaksView.open();
+    }, false);
+https://github.com/alexgibson/shake.js/
