@@ -7,6 +7,7 @@ require.config({
 	    'velocity': 'vendor/velocity/jquery.velocity.min',
         'text': 'vendor/requirejs-text/text',
         'backboneLocalstorage': 'vendor/backbone.localStorage/backbone.localStorage-min',
+        'd3': 'vendor/d3/d3.min',
 	    'app': 'app',
         'libs': 'libs'
     },
