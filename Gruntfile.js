@@ -193,4 +193,13 @@ module.exports = function(grunt) {
     //'testflight'
   ]);
 
+  grunt.registerTask('debug', [
+    'clean:build',
+    'less:development',
+    'copy:main',
+    'preprocess:dev',
+    'copy:build',
+    'shell:cordova'
+  ]);
+
 };
