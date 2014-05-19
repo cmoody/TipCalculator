@@ -17,6 +17,8 @@ https://github.com/alexgibson/shake.js/
 - Maybe create own keyboard on screen.  Remove description or swap out keyboards
 	- Use tap/touch animation on keyboard
 
+- Cordova config.xml <preference name="BackupWebStorage" value="none" />
+
 ** Bugs **
 - navigation returns to home when opening drawer
 - history doesnt open always

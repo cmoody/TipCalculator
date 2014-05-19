@@ -13,6 +13,7 @@ define(function (require) {
 
     var $body = $('body');
     var $content = $('.content');
+    //var $header = $('.bar-nav'); // Wont work since isnt in the DOM yet // Maybe move back into header
     var windowWidth = ($(window).width()) / 0.8;
 
     return Backbone.View.extend({
@@ -24,8 +25,8 @@ define(function (require) {
         events: {
             'tap .list a': 'navSlide',
             'tap .nav-closer': 'navSlide',
-            // 'drag .nav-closer': 'dragNav',
-            // 'release .nav-closer': 'dragNav'
+            'drag .nav-closer': 'dragNav',
+            'release .nav-closer': 'dragNav'
         },
 
         initialize: function() {
@@ -41,25 +42,24 @@ define(function (require) {
         // Still pretty slow
         dragNav: function(e) {
             var total = windowWidth + e.gesture.deltaX;
-            console.log(windowWidth);
-            console.log(e.gesture.deltaX);
-            console.log(total);
 
             if(total < windowWidth && total > 0) {
-                $content.css('transform','translateX('+e.gesture.center.pageX+'px)');
+                $content.css('transform','translateX('+e.gesture.center.pageX+'px)'); // This might be slow due to letting the browser handle animation update
+                //$header.css('transform','translateX('+e.gesture.center.pageX+'px)');
             }
 
             if(e.gesture.eventType === 'release' && e.gesture.interimDirection === 'left') {
                 $content.css('transform','');
+                //$header.css('transform','');
                 $body.toggleClass('open');
-            }else {
-                //reset?
+            }else if(e.gesture.eventType === 'release' && e.gesture.interimDirection === 'right'){
+                $content.css('transform','');
             }
         },
 
         navSlide: function() {
             $body.toggleClass('open');
-        },
+        }
 
     });
 

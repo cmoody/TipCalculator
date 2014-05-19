@@ -37,7 +37,11 @@ define(function (require) {
             return this;
     	},
 
-        navSlide: function() {
+        navSlide: function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            e.gesture.preventDefault()
+            e.gesture.stopPropagation();
             $body.toggleClass('open');
         }
 

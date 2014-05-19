@@ -39,8 +39,8 @@ define(function(require) {
       var slideNavView = new SlideNavView();
 
       $body
-        .prepend(slideNavView.$el)
-        .prepend(headerView.$el);
+        .prepend(headerView.$el)
+        .prepend(slideNavView.$el);
     },
 
     calculator: function() {

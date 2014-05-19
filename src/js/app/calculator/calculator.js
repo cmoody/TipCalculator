@@ -20,6 +20,7 @@ define(function(require) {
 			'tap .btn-tip': 'submitTip'
 		},
 
+		// Default percent
 		percent: 0.10,
 
 		initialize: function() {
