@@ -36,9 +36,10 @@ define(function (require) {
 
             return this;
     	},
+
         navSlide: function() {
             $body.toggleClass('open');
-        },
+        }
 
     });
 
