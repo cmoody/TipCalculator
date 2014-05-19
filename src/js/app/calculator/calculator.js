@@ -68,6 +68,7 @@ define(function(require) {
 				return;
 			}
 
+			// This animation is broken on ios
 			this.$('.dollar')
 				.velocity(
 					{

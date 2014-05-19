@@ -1,0 +1,40 @@
+.nav {
+  background-color: @black;
+  color: @white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  padding-top: 5px;
+  z-index: 2;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transform: translate3d(-20%, 0, 0);
+          transform: translate3d(-20%, 0, 0);
+  ul.list {
+    margin: 0;
+    padding: 0;
+    li {
+      &:first-child {
+        border-top: 0;
+      }
+      a {
+        padding: 20px;
+        color: #fff;
+        text-decoration: none;
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.nav-closer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  z-index: 1;
+}

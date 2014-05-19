@@ -15,7 +15,8 @@ define(function(require) {
   // Collections
 
   // Views
-  var NavTopView = require('app/navTop/navTop');
+  var HeaderView = require('app/header/header');
+  var SlideNavView = require('app/slideNav/slideNav');
   var CalculatorView = require('app/calculator/calculator');
   var HistoryView = require('app/history/history');
   var StatsView = require('app/stats/stats');
@@ -30,14 +31,16 @@ define(function(require) {
     },
 
     initialize: function() {
-      this.addTopNav();
+      this.addHeaderNav();
     },
 
-    addTopNav: function() {
-      var navTopView = new NavTopView();
+    addHeaderNav: function() {
+      var headerView = new HeaderView();
+      var slideNavView = new SlideNavView();
 
       $body
-        .prepend(navTopView.$el);
+        .prepend(slideNavView.$el)
+        .prepend(headerView.$el);
     },
 
     calculator: function() {

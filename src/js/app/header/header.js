@@ -9,27 +9,23 @@ define(function (require) {
     var stateEvents = require('libs/stateEvents');
 
     // Template
-    var tpl = require('text!app/navTop/tpl/nav.html');
+    var tpl = require('text!app/header/tpl/header.html');
     var template = _.template(tpl);
 
     var $body = $('body');
 
     return Backbone.View.extend({
 
-        tagName: 'nav',
-
-        className: '',
+        className: 'header',
 
         events: {
-            'tap .navbtn': 'navSlide',
-            'tap .list a': 'navSlide',
-            'tap .nav-closer': 'navSlide'
+            'tap .navbtn': 'navSlide'
         },
 
         initialize: function() {
             // Trigger for updating title
             stateEvents.on("update:title", function(title) {
-                this.$el.find('.title').html(title);
+                this.$('.title').html(title);
             }, this);
 
             this.render();
@@ -41,8 +37,6 @@ define(function (require) {
             return this;
     	},
         navSlide: function() {
-            // Add in overlay to close on body click
-            // Look into sliding this closed
             $body.toggleClass('open');
         },
 

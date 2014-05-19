@@ -9,7 +9,6 @@
   z-index: 10;
   height: 50px;
   padding-right: 10px;
-  padding-left: 10px;
   background-color: @blue;
   color: @white;
 }
@@ -50,15 +49,13 @@ nav.bar.bar-tab {
     display: inline-block;
     z-index: 9999;
     position: absolute;
-    top: 20px;
-    left: 10px;
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     &:before {
       content: "";
       position: absolute;
-      top: 0.25em;
-      left: 0;
+      top: 1.50em;
+      left: 1em;
       width: 1em;
       height: 0.125em;
       border-top: 0.375em double #fff;
@@ -71,47 +68,6 @@ nav.bar.bar-tab {
         -ms-transform: translate3d(0,50px,0);
          -o-transform: translate3d(0,50px,0);
             transform: translate3d(0,50px,0);
-  }
-}
-
-.nav-closer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20%;
-  height: 100%;
-  z-index: 1;
-}
-
-.nav {
-  background-color: @black;
-  color: @white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 100%;
-  padding-top: 5px;
-  z-index: 2;
-  -webkit-transition-duration: .5s;
-          transition-duration: .5s;
-  -webkit-transform: translate3d(-20%, 0, 0);
-          transform: translate3d(-20%, 0, 0);
-  ul.list {
-    margin: 0;
-    padding: 0;
-    li {
-      &:first-child {
-        border-top: 0;
-      }
-      a {
-        padding: 20px;
-        color: #fff;
-        text-decoration: none;
-        width: 100%;
-        display: inline-block;
-      }
-    }
   }
 }
 
