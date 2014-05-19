@@ -68,12 +68,10 @@ define(function(require) {
 				return;
 			}
 
-			// This animation is broken on ios
 			this.$('.dollar')
 				.velocity(
 					{
-						top: '0',
-						opacity: 1
+						top: '0'
 					}, 
 					{
 						duration: 2000,

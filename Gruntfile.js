@@ -70,6 +70,18 @@ module.exports = function(grunt) {
           }
         ]
       },
+      img: {
+        files: [
+          {
+            expand: true,
+            cwd: './src',
+            src: [
+              'assets/**/*',
+            ],
+            dest: './build'
+          }
+        ],
+      },
       build: {
         files: [
           {
@@ -134,7 +146,7 @@ module.exports = function(grunt) {
       },
       assets: {
         files: ['./src/assets/**/*'],
-        tasks: ['copy:main'],
+        tasks: ['copy:img'],
         options: {
           livereload: true
         }
@@ -169,6 +181,7 @@ module.exports = function(grunt) {
     'less:production',
     'requirejs',
     'preprocess:prod',
+    'copy:img',
     'copy:build'
   ]);
 
