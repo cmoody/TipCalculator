@@ -14,7 +14,7 @@ define(function(require) {
 		className: 'map',
 
 		initialize: function() {
-			stateEvents.trigger("change:navigation:secondary");
+			//stateEvents.trigger("change:navigation:secondary");
 			// Destroy on route change?
 
 			this.$el.html(template());
