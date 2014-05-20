@@ -29,6 +29,10 @@ define(function (require) {
             });
         },
 
+        addMarkers: function() {
+
+        },
+
         resize: function() {
             google.maps.event.trigger(this.userMap, "resize");
         }

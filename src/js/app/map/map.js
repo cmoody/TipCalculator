@@ -5,6 +5,7 @@ define(function(require) {
 	var $ = require('jquery');
 	var Backbone = require('backbone');
 	var Gmap = require('libs/gmap');
+	var stateEvents = require('libs/stateEvents');
 
 	// Template
     var template = _.template($('#tpl').html());
@@ -13,6 +14,9 @@ define(function(require) {
 		className: 'map',
 
 		initialize: function() {
+			stateEvents.trigger("change:navigation:secondary");
+			// Destroy on route change?
+
 			this.$el.html(template());
 		},
 
