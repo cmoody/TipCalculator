@@ -7,17 +7,19 @@ window.addEventListener('shake', function() {
       tweaksView.open();
     }, false);
 https://github.com/alexgibson/shake.js/
-
-
 - iScroll
-- Velocity Animations
-- D3 Charting
 
 - Lots of focus issues and keyboard overlay for calculator view
 - Maybe create own keyboard on screen.  Remove description or swap out keyboards
 	- Use tap/touch animation on keyboard
 
+To Do
+- Add loading screen
+- Add icons
+- config.xml
+
 ** Bugs **
-- navigation returns to home when opening drawer - bars are over calculator and bubbling https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
-- history doesnt open always
-- Velocity animation broken when submitting in calculator
+- history doesnt open always weird navigation issue
+- async could be causing an issue with almond
+
+- Check stuff with async for requirejs
