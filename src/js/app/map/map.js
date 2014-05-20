@@ -16,6 +16,7 @@ define(function(require) {
 		initialize: function() {
 			//stateEvents.trigger("change:navigation:secondary");
 			// Destroy on route change?
+			// Alternative is to position element in corner so click event is on this view
 
 			this.$el.html(template());
 		},
