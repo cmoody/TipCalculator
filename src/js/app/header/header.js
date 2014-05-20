@@ -19,13 +19,21 @@ define(function (require) {
         className: 'header',
 
         events: {
-            'tap .navbtn': 'navSlide'
+            'tap .navbtn': 'navSlide',
+            'tap .backbtn': 'updateNavigation'
         },
 
         initialize: function() {
             // Trigger for updating title
             stateEvents.on("update:title", function(title) {
                 this.$('.title').html(title);
+            }, this);
+
+            stateEvents.on("change:navigation", this.updateNavigation, this);
+
+            stateEvents.on("change:navigation:secondary", function(title) {
+                //this.$('.title').html(title);
+                // Change secondary navigation
             }, this);
 
             this.render();
@@ -37,11 +45,17 @@ define(function (require) {
             return this;
     	},
 
+        updateNavigation: function() {
+            //this.$('.title').html(title);
+            // Change .navbtn to < arrow
+            // toggle .navbtn/.backbtn
+        },
+
+        // If open unfocus keyboard
         navSlide: function(e) {
-            e.stopPropagation();
+            e.stopPropagation(); // Move to delegateEvents?
             e.preventDefault();
-            e.gesture.preventDefault()
-            e.gesture.stopPropagation();
+
             $body.toggleClass('open');
         }
 

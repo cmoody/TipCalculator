@@ -44,7 +44,27 @@ input {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   background-color: #fff;
-    -webkit-transition-duration: .5s;
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+}
+
+.child-view {
+  position: fixed;
+  top: 50px; // Make this height of top nav // Except on onboarding
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: #fff;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition-duration: .5s;
           transition-duration: .5s;
 }
 

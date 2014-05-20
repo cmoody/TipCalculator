@@ -39,7 +39,6 @@ define(function (require) {
             return this;
     	},
 
-        // Still pretty slow
         dragNav: function(e) {
             var total = windowWidth + e.gesture.deltaX;
 

@@ -20,6 +20,7 @@ define(function(require) {
   var CalculatorView = require('app/calculator/calculator');
   var HistoryView = require('app/history/history');
   var StatsView = require('app/stats/stats');
+  var MapView = require('app/map/map');
   
   return Backbone.Router.extend({
 
@@ -27,7 +28,8 @@ define(function(require) {
 		  '': 'calculator',
       '/': 'calculator',
       'history': 'history',
-      'stats': 'stats'
+      'stats': 'stats',
+      'map': 'map'
     },
 
     initialize: function() {
@@ -65,6 +67,15 @@ define(function(require) {
       stateEvents.trigger("update:title", "Stats");
 
       ViewHandler.setCurrent(statsView);
+    },
+
+    map: function() {
+      var mapView = new MapView();
+
+      stateEvents.trigger("update:title", "Map");
+
+      ViewHandler.setCurrent(mapView);
+      mapView.render();
     }
 
   });
