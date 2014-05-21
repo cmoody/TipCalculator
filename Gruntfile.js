@@ -63,7 +63,7 @@ module.exports = function(grunt) {
             cwd: './src',
             src: [
               'assets/**/*',
-              'js/**/*',
+              'js/**/**/*',
               '!css/**/*'
             ],
             dest: './build'
