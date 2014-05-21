@@ -30,18 +30,7 @@ define(function (require) {
     	},
 
         openMenu: function() {
-            this.$('.footer-nav').toggleClass('open');
-            // this.$('.footer-nav')
-            //     .velocity(
-            //         {
-            //             height: '100%'
-            //         }, 
-            //         {
-            //             duration: 2000,
-            //             easing: "easeIn",
-
-            //         }
-            //     );
+            this.$el.toggleClass('open');
         }
 
     });

@@ -20,6 +20,3 @@ To Do
 
 ** Bugs **
 - history doesnt open always weird navigation issue
-- async could be causing an issue with almond
-
-- Check stuff with async for requirejs
