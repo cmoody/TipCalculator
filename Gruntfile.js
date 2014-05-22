@@ -195,7 +195,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('debug', [
-    'clean:build',
+    'clean',
     'less:development',
     'copy:main',
     'preprocess:dev',

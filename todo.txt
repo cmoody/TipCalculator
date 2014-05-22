@@ -20,3 +20,9 @@ To Do
 
 ** Bugs **
 - history doesnt open always weird navigation issue
+
+
+Rework bottom navigation using nike-sb
+	container > items & overlay positioned to the bottom
+		overlay slides up on Y
+		items move from bottom calc what that is based on first item - spacing
