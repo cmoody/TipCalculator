@@ -13,10 +13,15 @@
   color: @white;
 }
 .footer {
+  height: 100%;
   nav.bar.bar-tab {
-    border-top: 0;
-    bottom: 0;
+    // border-top: 0;
+    // bottom: 0;
     z-index: 12;
+    background: transparent;
+  }
+  .footer-nav {
+    height: 100%;
   }
   .overlay {
     background-color: @blue;
@@ -28,13 +33,16 @@
     z-index: 11;
     -webkit-transition-duration: .5s;
             transition-duration: .5s;
-    -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 90%, 0);
+            transform: translate3d(0, 90%, 0);
   }
   .tab-item {
-    display: table-cell;
-    width: 1%;
-    height: 50px !default;
+    position: absolute;
+    bottom: 0;
+    //background-color: @blue;
+    display: inline-block;
+    width: 20%;
+    height: 50px;
     color: #fff;
     text-align: center;
     vertical-align: middle;
@@ -65,35 +73,76 @@
     }
   }
 
+  .i01 {
+    left: 0;
+  }
+  .i02 {
+    left: 20%;
+  }
+  .i03 {
+    left: 40%;
+  }
+  .i04 {
+    left: 60%;
+  }
+  .i05 {
+    left: 80%;
+  }
+  // Only shown on overlay
+  .i06 {
+    left: 100%;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  .i07 {
+    left: 100%;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  
+  @height: 50px;
+  @top: -400px;
   &.open {
     .overlay {
       -webkit-transform: translate3d(0, 0%, 0);
               transform: translate3d(0, 0%, 0);
     }
     .tab-item {
-
+      left: 80px;
     }
     .i01 {
-
+      -webkit-transform: translateY(@top);
+              transform: translateY(@top);
     }
     .i02 {
-
+      -webkit-transform: translateY(@top + @height);
+              transform: translateY(@top + @height);
     }
     .i03 {
-
+      -webkit-transform: translateY(@top + (@height*2));
+              transform: translateY(@top + (@height*2));
     }
     .i04 {
-
+      -webkit-transform: translateY(@top + (@height*3));
+              transform: translateY(@top + (@height*3));
     }
     .i05 {
-
+      left: 80%;
+      .tab-label {
+        display: none;
+      }
+      &:before {
+        content: 'X';
+      }
     }
     // Only shown on overlay
     .i06 {
-
+      -webkit-transform: translateY(@top + (@height*4));
+              transform: translateY(@top + (@height*4));
     }
     .i07 {
-
+      -webkit-transform: translateY(@top + (@height*5));
+              transform: translateY(@top + (@height*5));
     }
   }
 }
