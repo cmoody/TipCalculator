@@ -21,7 +21,8 @@
     background: transparent;
   }
   .footer-nav {
-    height: 100%;
+    position: absolute;
+    bottom: 0;
   }
   .overlay {
     pointer-events: none;
@@ -37,7 +38,7 @@
     -webkit-transform: translate3d(0, 90%, 0);
             transform: translate3d(0, 90%, 0);
   }
-  .tab-item {
+  .tab-item, .menu {
     position: absolute;
     bottom: 0;
     //background-color: @blue;
@@ -108,7 +109,7 @@
       -webkit-transform: translate3d(0, 0%, 0);
               transform: translate3d(0, 0%, 0);
     }
-    .tab-item {
+    .tab-item, .menu {
       left: 80px;
     }
     .i01 {
@@ -223,6 +224,16 @@
         -ms-transform: translate3d(0,50px,0);
          -o-transform: translate3d(0,50px,0);
             transform: translate3d(0,50px,0);
+  }
+}
+
+.header {
+  &.hide {
+    -webkit-transform: translate3d(0,100%,0);
+       -moz-transform: translate3d(0,100%,0);
+        -ms-transform: translate3d(0,100%,0);
+         -o-transform: translate3d(0,100%,0);
+            transform: translate3d(0,100%,0);
   }
 }
 

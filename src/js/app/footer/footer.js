@@ -16,7 +16,8 @@ define(function (require) {
         className: 'footer',
 
         events: {
-            'tap .menu': 'openMenu'
+            'tap .menu': 'openMenu',
+            'tap .tab-item': 'closeMenu'
         },
 
         initialize: function() {
@@ -31,6 +32,10 @@ define(function (require) {
 
         openMenu: function() {
             this.$el.toggleClass('open');
+        },
+
+        closeMenu: function() {
+            this.$el.removeClass('open');
         }
 
     });
