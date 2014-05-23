@@ -30,11 +30,21 @@ define(function (require) {
             return this;
     	},
 
-        openMenu: function() {
+        openMenu: function(e) {
+            // e.preventDefault();
+            // e.stopPropagation();
+            // e.gesture.stopPropagation();
+            // e.gesture.preventDefault();
+
             this.$el.toggleClass('open');
         },
 
-        closeMenu: function() {
+        closeMenu: function(e) {
+            // e.preventDefault();
+            // e.stopPropagation();
+            // e.gesture.stopPropagation();
+            // e.gesture.preventDefault();
+
             this.$el.removeClass('open');
         }
 
