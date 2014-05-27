@@ -13,14 +13,16 @@ require.config({
         'libs': 'libs'
     },
 	shim: {
-		'velocity': ['jquery']
+		'velocity': ['jquery'],
+		'iscroll': {
+			exports: 'IScroll'
+		}
 	}
 });
 
 require([
 	'app/router',
 	'velocity',
-	'iscroll',
 	'libs/delegateEvents'
 ], function(Router) {
 
