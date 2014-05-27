@@ -16,7 +16,8 @@ define(function (require) {
         className: 'footer',
 
         events: {
-            'tap .menu': 'openMenu'
+            'tap .menu': 'openMenu',
+            'tap .tab-item': 'closeMenu'
         },
 
         initialize: function() {
@@ -29,8 +30,22 @@ define(function (require) {
             return this;
     	},
 
-        openMenu: function() {
+        openMenu: function(e) {
+            // e.preventDefault();
+            // e.stopPropagation();
+            // e.gesture.stopPropagation();
+            // e.gesture.preventDefault();
+
             this.$el.toggleClass('open');
+        },
+
+        closeMenu: function(e) {
+            // e.preventDefault();
+            // e.stopPropagation();
+            // e.gesture.stopPropagation();
+            // e.gesture.preventDefault();
+
+            this.$el.removeClass('open');
         }
 
     });

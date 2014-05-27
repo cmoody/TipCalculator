@@ -7,9 +7,10 @@ window.addEventListener('shake', function() {
       tweaksView.open();
     }, false);
 https://github.com/alexgibson/shake.js/
-- iScroll
+- iScroll - make header go away
 
 - Lots of focus issues and keyboard overlay for calculator view
+- keyboard messes up with bottom nav instead of going over moves up awkwardly
 - Maybe create own keyboard on screen.  Remove description or swap out keyboards
 	- Use tap/touch animation on keyboard
 

@@ -10,8 +10,10 @@ define(function(require) {
 	var ExpenseView = require('app/history/expense');
 
 	// Template
-    // var tpl = require('text!app/history/tpl/index.html');
-    // var template = _.template(tpl);
+    var tpl = require('text!app/history/tpl/index.html');
+    var template = _.template(tpl);
+
+    var $header = $('.header');
 	
 	return Backbone.View.extend({
 		className: 'history',
@@ -23,12 +25,13 @@ define(function(require) {
 		},
 
 		render: function() {
-			var $view = this.$el;
+			this.$el.html(template());
+
+			var $view = this.$('.list');
+
 			if(Expenses.Collection.length === 0) {
-
+				$view.html("<li>No Expenses</li>");
 			}
-
-			//this.$el.html(template());
 
 			// Using this method allows for events specific to each row
 			Expenses.Collection.each(function(expense) {
@@ -41,8 +44,41 @@ define(function(require) {
 			// Alternative
 			// var list = "<% _.each(people, function(name) { %> <li><%= name %></li> <% }); %>";
 			// _.template(list, {people: ['moe', 'curly', 'larry']});
-			
+
+
+			// Look into reworking the html for this to use ul>li like in docs
+			// Cant get child el because they havent loaded yet
+
+// setTimeout(function(){
+// 	        this.viewScroll = new IScroll('#iscrollable', {
+// 	          probeType: 3,
+// 	          mouseWheel: true
+// 	        });
+
+// 	        this.viewScroll.yLast = 0;
+
+// 	        this.viewScroll.on('scrollCancel', this.updatePosition.bind(this));
+// 	        this.viewScroll.on('beforeScrollStart', this.updatePosition.bind(this));
+// 	        this.viewScroll.on('scrollStart', this.updatePosition.bind(this));
+// 	        this.viewScroll.on('scroll', this.updatePosition.bind(this));
+// 	        this.viewScroll.on('scrollEnd', this.updatePosition.bind(this));
+// }.bind(this), 200);
+
 			return this;
+		},
+
+		updatePosition: function() {
+			var direction = 0;
+		    direction = this.viewScroll.yLast > this.viewScroll.y && this.viewScroll.y < 0 ? 1 : direction;
+		    direction = this.viewScroll.yLast < this.viewScroll.y && this.viewScroll.y > this.viewScroll.maxScrollY ? -1 : direction;
+		    this.viewScroll.yLast = this.viewScroll.y;
+		    //console.log(direction);
+		    if (direction === 1) {
+		      $header.addClass('hide');
+		    }
+		    if (direction === -1) {
+		      $header.removeClass('hide');
+		    }
 		}
 	});
 

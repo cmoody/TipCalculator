@@ -16,6 +16,7 @@
     "velocity": "0.0.9",
     "backbone.localStorage": "~1.1.7",
     "d3": "3.4.6",
-    "shake.js": "1.1.0"
+    "shake.js": "1.1.0",
+    "iscroll": "5.1.1"
   }
 }

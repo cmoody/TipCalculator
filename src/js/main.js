@@ -8,6 +8,7 @@ require.config({
         'text': 'vendor/requirejs-text/text',
         'backboneLocalstorage': 'vendor/backbone.localStorage/backbone.localStorage-min',
         'd3': 'vendor/d3/d3.min',
+        'iscroll': 'vendor/iscroll/build/iscroll-probe',
 	    'app': 'app',
         'libs': 'libs'
     },
@@ -19,6 +20,7 @@ require.config({
 require([
 	'app/router',
 	'velocity',
+	'iscroll',
 	'libs/delegateEvents'
 ], function(Router) {
 

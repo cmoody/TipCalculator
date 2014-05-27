@@ -33,6 +33,10 @@ define(function (require) {
 
         },
 
+        addMyMarker: function() {
+
+        },
+
         resize: function() {
             google.maps.event.trigger(this.userMap, "resize");
         }

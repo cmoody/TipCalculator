@@ -17,6 +17,9 @@ define(function(require) {
     var $childView = $('.child-view');
 
 	return Backbone.View.extend({
+
+		 tagName: 'li',
+
 		className: 'expense',
 
 		events: {
@@ -55,6 +58,7 @@ define(function(require) {
 			this.childViewHandler(expenseDetailsView);
 			expenseDetailsView.render();
 		}
+		
 	});
 
 });

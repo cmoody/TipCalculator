@@ -56,7 +56,10 @@ define(function (require) {
             }
         },
 
-        navSlide: function() {
+        navSlide: function(e) {
+            // e.stopPropagation();
+            // e.gesture.stopPropagation();
+            
             $body.toggleClass('open');
         }
 
