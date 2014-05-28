@@ -1,10 +1,8 @@
 .bar-tab {
   bottom: 0;
-  //display: table;
   width: 100%;
   height: 50px;
   padding: 0;
-  //table-layout: fixed;
   border-bottom: 0;
   z-index: 12;
 }
@@ -62,6 +60,7 @@
     }
   }
 
+// Maybe use percentage to determine spacing
   @height: 50px;
   @top: -400px;
   &.open {
@@ -103,12 +102,12 @@
     }
     // Only shown on overlay
     .i06 {
-      -webkit-transform: translate3d(0, @top + (@height*4), 0);
-              transform: translate3d(0, @top + (@height*4), 0);
+      -webkit-transform: translate3d(45px, -252px, 0);
+              transform: translate3d(45px, -252px, 0);
     }
     .i07 {
-      -webkit-transform: translate3d(0, @top + (@height*5), 0);
-              transform: translate3d(0, @top + (@height*5), 0);
+      -webkit-transform: translate3d(-15px, -204px, 0);
+              transform: translate3d(-15px, -204px, 0);
     }
   }
 }
