@@ -21,3 +21,4 @@ To Do
 
 ** Bugs **
 - history doesnt open always weird navigation issue (more bug with nav links)
+- If in childview and select new view doesnt return everything back
