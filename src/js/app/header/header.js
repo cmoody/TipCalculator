@@ -16,6 +16,8 @@ define(function (require) {
     var $content = $('.content');
     var $childView = $('.child-view');
 
+    var is_back = false;
+
     return Backbone.View.extend({
 
         className: 'header',
@@ -51,6 +53,9 @@ define(function (require) {
         },
 
         updateNavigation: function(backbtn) {
+            // Move to store state of change here
+            // Dont use toggle but check state
+            // Remove passing backbtn
             this.$('.button').toggle();
 
             if(backbtn) {
