@@ -1,5 +1,8 @@
 Tip Calculator
 ==============
+This app is an example hybrid app testing out many different things such as animations and google maps.
+
+All libraries used can be found in the bower.json file.
 
 # Getting Started
 ## Install Dependencies
