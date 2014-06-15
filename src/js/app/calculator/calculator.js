@@ -70,32 +70,32 @@ define(function(require) {
 			}
 
 			this.$('.dollar')
-				.velocity(
-					{
-						top: '0'
-					}, 
-					{
-						duration: 2000,
-						easing: "easeInOutElastic",
+				.velocity({ top: '0' }, { duration: 2000, easing: "easeInOutElastic" });
 
+			navigator.geolocation.getCurrentPosition(function(position) {
+				console.log(position)
+				Expenses.Collection.create({
+					description: $description.val(),
+					bill: $bill.val(),
+					tip: $tip.val(),
+					total: $total.val(),
+					date: new Date(),
+					coordinates: {
+						latitude: position.coords.latitude, 
+						longitude: position.coords.longitude
 					}
-				).velocity("reverse", {delay: 1000, duration: 2000});
+				});
 
-			Expenses.Collection.create({
-				description: $description.val(),
-				bill: $bill.val(),
-				tip: $tip.val(),
-				total: $total.val(),
-				date: new Date()
-				//coordinates: coordinates
-			});
+				setTimeout(function() {
+					$description.val('');
+					$bill.val('');
+					$tip.val('');
+					$total.val('');
+				}, 2500);
 
-			setTimeout(function() {
-				$description.val('');
-				$bill.val('');
-				$tip.val('');
-				$total.val('');
-			}, 2500);
+				this.$('.dollar')
+					.velocity("reverse", {delay: 1000, duration: 2000});
+			}.bind(this));
 		}
 	});
 

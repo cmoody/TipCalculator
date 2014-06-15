@@ -52,8 +52,6 @@ define(function(require) {
 		 //          mouseWheel: true
 		 //        });
 
-		 //        this.viewScroll.yLast = 0;
-
 		 //        this.viewScroll.on('scrollCancel', this.updatePosition.bind(this));
 		 //        this.viewScroll.on('beforeScrollStart', this.updatePosition.bind(this));
 		 //        this.viewScroll.on('scrollStart', this.updatePosition.bind(this));
@@ -67,18 +65,12 @@ define(function(require) {
 		// Direction is always 0?
 		// I think this is for bottom menu not top
 		updatePosition: function() {
-			console.log(this.viewScroll);
 			var direction = 0;
 		    direction = this.viewScroll.yLast > this.viewScroll.y && this.viewScroll.y < 0 ? 1 : direction;
 		    direction = this.viewScroll.yLast < this.viewScroll.y && this.viewScroll.y > this.viewScroll.maxScrollY ? -1 : direction;
 		    this.viewScroll.yLast = this.viewScroll.y;
 
-		    if (direction === 1) {
-		      $header.addClass('hide');
-		    }
-		    if (direction === -1) {
-		      $header.removeClass('hide');
-		    }
+		    console.log(direction);
 		}
 	});
 

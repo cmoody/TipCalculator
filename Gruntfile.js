@@ -162,6 +162,17 @@ module.exports = function(grunt) {
         ipa: {
           command: ''
         }
+    },
+
+    jshint: {
+      src: {
+        options: {
+          jshintrc: './.jshintrc'
+        },
+        files: {
+          src: ['src/js/main.js', 'src/js/app/**/*.js', 'src/js/libs/**/*.js']
+        }
+      }
     }
 
   });
@@ -201,6 +212,11 @@ module.exports = function(grunt) {
     'preprocess:dev',
     'copy:build',
     'shell:cordova'
+  ]);
+
+  // Run Tests
+  grunt.registerTask('test', [
+    'jshint'
   ]);
 
 };
