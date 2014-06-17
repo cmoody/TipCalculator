@@ -20,7 +20,7 @@ define(function (require) {
             }
 
             var mapOptions = {
-                zoom: 16,
+                zoom: 12, //16
                 center: mapCenter,
                 disableDefaultUI: true,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -38,11 +38,35 @@ define(function (require) {
             var that = this;
             var coordinates = expense.get('coordinates');
             var expenseLatLng = new google.maps.LatLng(coordinates.latitude, coordinates.longitude);
+            var percent = expense.get('percent');
+            var pinColor;
+
+            // Not sure why 0.20 is a string and the rest are numbers
+            switch (percent) {
+                case 0.10:
+                    pinColor = "ff6600";
+                    break;
+                case 0.15:
+                    pinColor = "f9de52";
+                    break;
+                case '0.20':
+                    pinColor = "5cb85c";
+                    break;
+                case 0:
+                    pinColor = "ea2d3f";
+                    break;
+            }
+
+            var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+                new google.maps.Size(21, 34),
+                new google.maps.Point(0,0),
+                new google.maps.Point(10, 34));
 
             var marker = new google.maps.Marker({
                 position: expenseLatLng,
                 map: this.userMap,
-                title: expense.get('description')
+                title: expense.get('description'),
+                icon: pinImage
             });
 
             var infowindow = new google.maps.InfoWindow({

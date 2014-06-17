@@ -55,6 +55,7 @@ define(function(require) {
 
 		noTip: function() {
 			this.$('.tip').val(0);
+			this.percent = 0;
 			this.submitTip();
 		},
 
