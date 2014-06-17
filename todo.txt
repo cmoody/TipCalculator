@@ -1,5 +1,7 @@
 TipCalculator
 
+- Add in bill splitting
+
 - Dollar slide in make it rain (white bg fade in/out dollar sign drop in?)
 
 - Shake to show settings (create lib included in main.js)
