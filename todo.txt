@@ -1,15 +1,12 @@
 TipCalculator
 
+- Merge BB Boilerplate
+
+- Decide on bottom nav vs slide nav
+
 - Add in bill splitting
 
 - Dollar slide in make it rain (white bg fade in/out dollar sign drop in?)
-
-- Shake to show settings (create lib included in main.js)
-window.addEventListener('shake', function() {
-      tweaksView.open();
-    }, false);
-https://github.com/alexgibson/shake.js/
-- iScroll - make header go away
 
 - Lots of focus issues and keyboard overlay for calculator view
 - keyboard messes up with bottom nav instead of going over moves up awkwardly
