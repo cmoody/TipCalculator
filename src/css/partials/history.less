@@ -1,40 +1,34 @@
-.expense {
-	border-top: 1px solid #000;
-	//
-	display: block;
-	height: 75px;
-	//
+.history {
 	ul {
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
 		li {
-			padding: 0;
 			margin: 0;
-			//
-			margin-left: 32px;
-			//
 		}
 	}
+}
+.expense {
+	border-bottom: 1px solid #000;
+	display: block;
+	height: 75px;
+	padding: 10px;
 	.details {
-		//
 		float: left;
 		width: 50%;
-		//
 	}
 	.value {
-		//
 		float: right;
 		width: 50%;
-		//
+		li {
+			margin-left: 32px;
+		}
 		&:before {
 			content: "$";
-
 			// Test with multiples
 			position: absolute;
 			font-size: 3em;
-			color: #00ff00;
-			//
+			color: #5cb85c;
 		}
 		.value-total {
 			border-top: 1px solid #000;

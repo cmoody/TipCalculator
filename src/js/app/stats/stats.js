@@ -1,11 +1,13 @@
 define(function(require) {
 	"use strict";
 
-	// Libs
+	// Vendor
 	var $ = require('jquery');
 	var Backbone = require('backbone');
-	var Expenses = require('app/models/expenses');
 	var d3 = require('d3');
+
+	// Model
+	var Expenses = require('app/models/expenses');
 
 	// Template
     var tpl = require('text!app/stats/tpl/index.html');

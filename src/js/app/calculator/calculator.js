@@ -1,7 +1,7 @@
 define(function(require) {
 	"use strict";
 
-	// Libs
+	// Vendor
 	var $ = require('jquery');
 	var Backbone = require('backbone');
 	var Expenses = require('app/models/expenses');
