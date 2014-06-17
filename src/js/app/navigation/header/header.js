@@ -9,7 +9,7 @@ define(function (require) {
     var stateEvents = require('libs/stateEvents');
 
     // Template
-    var tpl = require('text!app/header/tpl/header.html');
+    var tpl = require('text!app/navigation/header/tpl/header.html');
     var template = _.template(tpl);
 
     var $body = $('body');

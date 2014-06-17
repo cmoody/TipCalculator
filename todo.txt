@@ -1,23 +1,18 @@
 TipCalculator
 
-- Merge BB Boilerplate
-
-- Decide on bottom nav vs slide nav
-
-- Add in bill splitting
-
-- Dollar slide in make it rain (white bg fade in/out dollar sign drop in?)
-
-- Lots of focus issues and keyboard overlay for calculator view
-- keyboard messes up with bottom nav instead of going over moves up awkwardly
-- Maybe create own keyboard on screen.  Remove description or swap out keyboards
-	- Use tap/touch animation on keyboard
-
-To Do
+== To Do ==
 - Add loading screen
 - Add icons
 - config.xml
+- Style history and childview
+- Add markers to map
 
-** Bugs **
-- history doesnt open always weird navigation issue (more bug with nav links)
-- If in childview and select new view doesnt return everything back
+== Bugs ==
+- Chart for 0 expenses
+
+== Possible Features ==
+- Maybe merge in ratchet
+- Add in bill splitting
+- Dollar slide in make it rain (white bg fade in/out dollar sign drop in?)
+- Create touch keypad for input
+	- Use tap/touch animation on keyboard

@@ -15,8 +15,8 @@ define(function(require) {
   // Collections
 
   // Views
-  var HeaderView = require('app/header/header');
-  var SlideNavView = require('app/slideNav/slideNav');
+  var HeaderView = require('app/navigation/header/header');
+  var SlideNavView = require('app/navigation/slideNav/slideNav');
   var CalculatorView = require('app/calculator/calculator');
   var HistoryView = require('app/history/history');
   var StatsView = require('app/stats/stats');
@@ -48,33 +48,25 @@ define(function(require) {
     calculator: function() {
       var calculatorView = new CalculatorView();
 
-      stateEvents.trigger("update:title", "Calculator");
-
-      ViewHandler.setCurrent(calculatorView);
+      ViewHandler.setCurrent(calculatorView, "Calculator");
     },
 
     history: function() {
       var historyView = new HistoryView();
 
-      stateEvents.trigger("update:title", "History");
-
-      ViewHandler.setCurrent(historyView);
+      ViewHandler.setCurrent(historyView, "History");
     },
 
     stats: function() {
       var statsView = new StatsView();
 
-      stateEvents.trigger("update:title", "Stats");
-
-      ViewHandler.setCurrent(statsView);
+      ViewHandler.setCurrent(statsView, "Stats");
     },
 
     map: function() {
       var mapView = new MapView();
 
-      stateEvents.trigger("update:title", "Map");
-
-      ViewHandler.setCurrent(mapView);
+      ViewHandler.setCurrent(mapView, "Map");
       mapView.render();
     }
 

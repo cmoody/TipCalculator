@@ -1,11 +1,13 @@
 define(function(require) {
 	"use strict";
 
-	// Libs
+	// Vendor
 	var $ = require('jquery');
 	var Backbone = require('backbone');
+	//var IScroll = require('iscroll');
+
+	// Model
 	var Expenses = require('app/models/expenses');
-	var IScroll = require('iscroll');
 
 	// SubViews
 	var ExpenseView = require('app/history/expense');
@@ -35,6 +37,7 @@ define(function(require) {
 			}
 
 			// Using this method allows for events specific to each row
+			// Order by most recent date
 			Expenses.Collection.each(function(expense) {
 				
 				var expenseView = new ExpenseView({model: expense});

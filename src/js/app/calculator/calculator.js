@@ -73,7 +73,7 @@ define(function(require) {
 				.velocity({ top: '0' }, { duration: 2000, easing: "easeInOutElastic" });
 
 			navigator.geolocation.getCurrentPosition(function(position) {
-				console.log(position)
+				//console.log(position)
 				Expenses.Collection.create({
 					description: $description.val(),
 					bill: $bill.val(),

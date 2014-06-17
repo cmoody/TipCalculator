@@ -1,12 +1,21 @@
 define(function(require) {
 
-  	"use strict";
+	"use strict";
 
-  	var $ = require('jquery');
-  	var Backbone = require('backbone');
-  	var $content = $(".content");
-  	var currentView;
+	// Vendor
+	var $ = require('jquery');
+	var Backbone = require('backbone');
 
+	// Libs
+	var stateEvents = require('libs/stateEvents');
+
+	// Elements
+	var $content = $(".content");
+
+	// Other
+	var currentView;
+
+ 	// Adds Close to Backbone Views
 	Backbone.View.prototype.close = function(){
 		this.remove();
 		this.unbind();
@@ -15,35 +24,12 @@ define(function(require) {
 		}
 	};
 
-	// Maybe setup to remove if no transitions needed
-	Backbone.View.prototype.onEnter = function() {
-
-	};
-
-	Backbone.View.prototype.onExit = function() {
-		// this.pageTransition.out
-	};
-
-	Backbone.View.prototype.pageTransition = {
-      'in': '',
-      'out': '',
-      'inReverse': '',
-      'outReverse': ''
-    };
-
   	var ViewHandler = {
-		//http://stackoverflow.com/questions/17634769/page-transitions-with-requirejs-and-backbone-js
-  		// Maybe use above for transitions to childviews only
-  		// then its all based on triggers and no need to update url and remove parentview since will be returning
-  		// Only handles one level deep still causes url update for link within
-  		setCurrent: function(view) {
-  			// Call property on view for in/out
-  			// currentView.onExit then on complete close
-  			// view.onEnter
-  			// Look into watching css animation start/stop
-  			// Maybe test velocityjs for transitions
+  		setCurrent: function(view, title) {
+  			if(title) {
+  				stateEvents.trigger("update:title", title);
+  			}
 
-  			// Check if next view is same as previous view and use inReverse & outReverse?
 			if (currentView){
 				currentView.close();
 			}
@@ -51,17 +37,6 @@ define(function(require) {
 		  	currentView = view;
 
 		  	$content.html(currentView.$el);
-
-		  	// Maybe pass in event.target and check if has data-attr="back"
-
-		  	// Need to check back vs forward?
-
-		  	// WORKFLOW
-		  	// add class to position offscreen
-		  	// insert into dom
-		  	// use velocityjs to transition
-		  	// On complete for currentView call close
-		  	// then make view the currentView
 		}
 	}
 

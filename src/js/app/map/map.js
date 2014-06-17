@@ -1,11 +1,15 @@
 define(function(require) {
 	"use strict";
 
-	// Libs
+	// Vendor
 	var $ = require('jquery');
 	var Backbone = require('backbone');
+
+	// Libs
 	var Gmap = require('libs/gmap');
-	var stateEvents = require('libs/stateEvents');
+
+	// Model
+	var Expenses = require('app/models/expenses');
 
 	// Template
     var template = _.template($('#tpl').html());
@@ -14,15 +18,19 @@ define(function(require) {
 		className: 'map',
 
 		initialize: function() {
-			//stateEvents.trigger("change:navigation:secondary");
-			// Destroy on route change?
-			// Alternative is to position element in corner so click event is on this view
+			Expenses.Collection.fetch({reset:true});
 
 			this.$el.html(template());
 		},
 
 		render: function() {
 			Gmap.init(this.$('#map_holder'));
+
+			Expenses.Collection.each(function(expense) {
+				
+				Gmap.addMarkers(expense);
+
+			}, this);
 			
 			return this;
 		}
