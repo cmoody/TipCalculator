@@ -5,10 +5,9 @@ TipCalculator
 - Add icons
 - config.xml
 - Style history and childview
-- Add markers to map
+- Color coded map markers
 
 == Bugs ==
-- Chart for 0 expenses
 
 == Possible Features ==
 - Maybe merge in ratchet

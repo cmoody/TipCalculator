@@ -24,7 +24,9 @@ define(function(require) {
 			var totalJSON = Expenses.Collection.getTotals();
 			this.$el.html(template(totalJSON));
 
-			this.pieChart(totalJSON);
+			if(totalJSON.bill > 0) {
+				this.pieChart(totalJSON);
+			}
 			
 			return this;
 		},
