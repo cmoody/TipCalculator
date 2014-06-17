@@ -22,7 +22,6 @@ define(function(require) {
 			this.render();
 		},
 
-		// Add average % tip
 		render: function() {
 			var totalJSON = Expenses.Collection.getTotals();
 			this.$el.html(template(totalJSON));

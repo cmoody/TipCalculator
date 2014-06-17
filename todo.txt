@@ -5,7 +5,6 @@ TipCalculator
 - Add icons
 - config.xml
 - Style history and childview
-- Color coded map markers
 
 == Bugs ==
 
@@ -15,3 +14,4 @@ TipCalculator
 - Dollar slide in make it rain (white bg fade in/out dollar sign drop in?)
 - Create touch keypad for input
 	- Use tap/touch animation on keyboard
+- Updated gmap icons (use static imgs instead of loading external)
