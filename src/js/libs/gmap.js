@@ -33,14 +33,29 @@ define(function (require) {
             });
         },
 
+        // Change marker color based on percentage 10-15-20-none
         addMarkers: function(expense) {
+            var that = this;
             var coordinates = expense.get('coordinates');
             var expenseLatLng = new google.maps.LatLng(coordinates.latitude, coordinates.longitude);
 
             var marker = new google.maps.Marker({
                 position: expenseLatLng,
                 map: this.userMap,
-                title: "Hello World!"
+                title: expense.get('description')
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                content: '<p>' + expense.get('description') + '</p>' +
+                         '<p>Bill: ' + expense.get('bill') + '</p>' +
+                         '<p>Tip: ' + expense.get('tip') + '</p>' +
+                         '<p>Total: ' + expense.get('total') + '</p>' +
+                         '<p>Percent: ' + expense.get('percent') * 100 + '%</p>' +
+                         '<p>Date: ' + expense.get('date') + '</p>'
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.open(that.userMap, marker);
             });
         },
 

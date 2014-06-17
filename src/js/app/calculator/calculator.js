@@ -63,6 +63,7 @@ define(function(require) {
 			var $bill = this.$('.bill');
 			var $tip = this.$('.tip');
 			var $total = this.$('.total');
+			var $percent = this.percent;
 			var coordinates;
 
 			if(!$description.val() || !$bill.val()) {
@@ -73,13 +74,13 @@ define(function(require) {
 				.velocity({ top: '0' }, { duration: 2000, easing: "easeInOutElastic" });
 
 			navigator.geolocation.getCurrentPosition(function(position) {
-				//console.log(position)
 				Expenses.Collection.create({
 					description: $description.val(),
 					bill: $bill.val(),
 					tip: $tip.val(),
 					total: $total.val(),
 					date: new Date(),
+					percent: $percent,
 					coordinates: {
 						latitude: position.coords.latitude, 
 						longitude: position.coords.longitude
@@ -91,7 +92,7 @@ define(function(require) {
 					$bill.val('');
 					$tip.val('');
 					$total.val('');
-				}, 2500);
+				}, 1000);
 
 				this.$('.dollar')
 					.velocity("reverse", {delay: 1000, duration: 2000});
