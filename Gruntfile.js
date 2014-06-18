@@ -50,7 +50,8 @@ module.exports = function(grunt) {
           mainConfigFile: "./src/js/main.js",
           name: "vendor/almond/almond",
           out: "build/js/app.js",
-          wrap: true
+          wrap: true,
+          preserveLicenseComments: false
         }
       }
     },

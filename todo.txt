@@ -7,6 +7,7 @@ TipCalculator
 - Style history and childview
 
 == Bugs ==
+- Switches to home on certain clicks
 
 == Possible Features ==
 - Maybe merge in ratchet
