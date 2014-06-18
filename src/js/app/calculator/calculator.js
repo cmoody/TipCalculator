@@ -67,7 +67,15 @@ define(function(require) {
 			var $percent = this.percent;
 			var coordinates;
 
-			if(!$description.val() || !$bill.val()) {
+			if(!$description.val()) {
+				$description.velocity("callout.shake");
+
+				return;
+			}
+
+			if(!$bill.val()) {
+				$bill.velocity("callout.shake");
+
 				return;
 			}
 
@@ -97,6 +105,7 @@ define(function(require) {
 
 				this.$('.dollar')
 					.velocity("reverse", {delay: 1000, duration: 2000});
+
 			}.bind(this));
 		}
 	});

@@ -5,6 +5,7 @@ require.config({
 	    'underscore': 'vendor/underscore/underscore',
 	    'hammerjs': 'vendor/jquery-hammerjs/jquery.hammer-full.min',
 	    'velocity': 'vendor/velocity/jquery.velocity.min',
+	    'velocityui': 'vendor/velocity/velocity.ui',
         'text': 'vendor/requirejs-text/text',
         'backboneLocalstorage': 'vendor/backbone.localStorage/backbone.localStorage-min',
         'd3': 'vendor/d3/d3.min',
@@ -14,6 +15,7 @@ require.config({
     },
 	shim: {
 		'velocity': ['jquery'],
+		'velocityui': ['velocity'],
 		'iscroll': {
 			exports: 'IScroll'
 		}
@@ -23,6 +25,7 @@ require.config({
 require([
 	'app/router',
 	'velocity',
+	'velocityui',
 	'libs/delegateEvents'
 ], function(Router) {
 

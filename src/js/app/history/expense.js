@@ -31,8 +31,28 @@ define(function(require) {
 		},
 
 		render: function() {
-			this.$el.html(template(this.model.toJSON()));
+			var jsonData = this.model.toJSON();
+			var border;
+
+			this.$el.html(template(jsonData));
+
+			switch(jsonData.percent) {
+				case 0.10:
+                    border = "ten";
+                    break;
+                case 0.15:
+                    border = "fifteen";
+                    break;
+                case '0.20':
+                    border = "twenty";
+                    break;
+                case 0:
+                    border = "notip";
+                    break;
+			}
 			
+			this.$el.addClass(border);
+
 			return this;
 		},
 

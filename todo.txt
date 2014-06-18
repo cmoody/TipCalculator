@@ -15,3 +15,5 @@ TipCalculator
 - Create touch keypad for input
 	- Use tap/touch animation on keyboard
 - Updated gmap icons (use static imgs instead of loading external)
+- Bar chart timeline
+- Ability to view data based on months, year, etc.

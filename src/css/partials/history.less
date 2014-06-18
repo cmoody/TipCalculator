@@ -13,15 +13,28 @@
 	display: block;
 	height: 75px;
 	padding: 10px;
+	&.notip {
+		border-left: 10px solid #ea2d3f;
+	}
+	&.ten {
+		border-left: 10px solid #ff6600;
+	}
+	&.fifteen {
+		border-left: 10px solid #f9de52;
+	}
+	&.twenty {
+		border-left: 10px solid #5cb85c;
+	}
 	.details {
 		float: left;
-		width: 50%;
+		width: 56%;
 	}
 	.value {
-		float: right;
-		width: 50%;
+		float: left;
+		width: 34%;
 		li {
 			margin-left: 32px;
+			text-align: right;
 		}
 		&:before {
 			content: "$";
@@ -34,4 +47,12 @@
 			border-top: 1px solid #000;
 		}
 	}
+	.arrow {
+		width: 10%;
+		float: right;
+		text-align: right;
+	}
+}
+.expense-details {
+	
 }

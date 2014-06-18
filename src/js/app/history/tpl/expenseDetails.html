@@ -1,4 +1,9 @@
-<h1><%= description %></h1>
-<p><%= total %></p>
-<p>Lat: <%= coordinates.latitude %></p>
-<p>Lng: <%= coordinates.longitude %></p>
+<div class="map">
+	<img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= coordinates.latitude %>,<%= coordinates.longitude %>&zoom=13&size=320x200&maptype=roadmap
+&markers=<%= coordinates.latitude %>,<%= coordinates.longitude %>" alt="">
+</div>
+<p><%= description %></p>
+<p>Bill: <%= bill %></p>
+<p>Tip: <%= tip %></p>
+<p>Total: <%= total %></p>
+<p><%= percent*100 %>%</p>
