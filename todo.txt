@@ -7,7 +7,7 @@ TipCalculator
 - Style history and childview
 
 == Bugs ==
-- Switches to home on certain clicks
+- Switches to home on certain clicks - bad fix margin-top: 50px
 
 == Possible Features ==
 - Maybe merge in ratchet

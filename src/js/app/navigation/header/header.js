@@ -16,7 +16,7 @@ define(function (require) {
     var $content = $('.content');
     var $childView = $('.child-view');
 
-    var is_back = false;
+    //var is_back = false;
 
     return Backbone.View.extend({
 
@@ -79,7 +79,7 @@ define(function (require) {
         // If open unfocus keyboard
         navSlide: function(e) {
             e.stopPropagation(); // Move to delegateEvents? // might be fixed after random href on navbtn
-            e.preventDefault();
+            // e.preventDefault();
 
             $body.toggleClass('open');
         }
