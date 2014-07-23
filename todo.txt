@@ -7,9 +7,9 @@ TipCalculator
 - Style history and childview
 
 == Bugs ==
-- Switches to home on certain clicks - bad fix margin-top: 50px
 
 == Possible Features ==
+- Take a photo of receipt
 - Maybe merge in ratchet
 - Add in bill splitting
 - Dollar slide in make it rain (white bg fade in/out dollar sign drop in?)

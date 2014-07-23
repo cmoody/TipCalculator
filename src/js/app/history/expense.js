@@ -18,7 +18,7 @@ define(function(require) {
 
 	return Backbone.View.extend({
 
-		 tagName: 'li',
+		tagName: 'li',
 
 		className: 'expense',
 

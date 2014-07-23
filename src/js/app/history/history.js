@@ -28,6 +28,7 @@ define(function(require) {
 		},
 
 		render: function() {
+			var expenseViews = document.createDocumentFragment();
 			this.$el.html(template());
 
 			var $view = this.$('.list');
@@ -41,9 +42,13 @@ define(function(require) {
 			Expenses.Collection.each(function(expense) {
 				
 				var expenseView = new ExpenseView({model: expense});
-				$view.append(expenseView.$el);
+				expenseViews.appendChild(expenseView.render().el);
+				//$view.append(expenseView.$el);
 
 			}, this);
+
+			$view.html(expenseViews).find('.expense')
+				.velocity("transition.perspectiveDownIn", { stagger: 250 });
 
 			// Alternative
 			// var list = "<% _.each(people, function(name) { %> <li><%= name %></li> <% }); %>";
