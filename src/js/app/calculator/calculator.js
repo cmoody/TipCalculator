@@ -17,7 +17,8 @@ define(function(require) {
 			'keyup .bill': 'calc',
 			'tap .percent': 'setPercent',
 			'tap .btn-notip': 'noTip',
-			'tap .btn-tip': 'submitTip'
+			'tap .btn-tip': 'submitTip',
+			'tap .btn-photo': 'attachPhoto'
 		},
 
 		// Default percent
@@ -107,6 +108,10 @@ define(function(require) {
 					.velocity("reverse", {delay: 1000, duration: 2000});
 
 			}.bind(this));
+		},
+
+		attachPhoto: function() {
+			
 		}
 	});
 
