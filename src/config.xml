@@ -9,6 +9,19 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />

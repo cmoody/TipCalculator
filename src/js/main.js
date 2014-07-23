@@ -28,6 +28,9 @@ require([
 	'velocityui',
 	'libs/delegateEvents'
 ], function(Router) {
+	navigator.geolocation.getCurrentPosition(function() {
+		// promt user
+	});
 
 	var appRouter = new Router();
 	Backbone.history.start();
