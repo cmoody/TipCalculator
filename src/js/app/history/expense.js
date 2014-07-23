@@ -1,3 +1,5 @@
+// Look at making border a div to prevent / border issue
+
 define(function(require) {
 	"use strict";
 

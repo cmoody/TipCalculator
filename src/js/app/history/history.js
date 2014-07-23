@@ -37,35 +37,15 @@ define(function(require) {
 				$view.html("<li>No Expenses</li>");
 			}
 
-			// Using this method allows for events specific to each row
-			// Order by most recent date
 			Expenses.Collection.each(function(expense) {
 				
 				var expenseView = new ExpenseView({model: expense});
 				expenseViews.appendChild(expenseView.render().el);
-				//$view.append(expenseView.$el);
 
 			}, this);
 
 			$view.html(expenseViews).find('.expense')
-				.velocity("transition.perspectiveDownIn", { stagger: 250 });
-
-			// Alternative
-			// var list = "<% _.each(people, function(name) { %> <li><%= name %></li> <% }); %>";
-			// _.template(list, {people: ['moe', 'curly', 'larry']});
-
-			// setTimeout(function(){
-		 //        this.viewScroll = new IScroll('#iscrollable', {
-		 //          probeType: 3,
-		 //          mouseWheel: true
-		 //        });
-
-		 //        this.viewScroll.on('scrollCancel', this.updatePosition.bind(this));
-		 //        this.viewScroll.on('beforeScrollStart', this.updatePosition.bind(this));
-		 //        this.viewScroll.on('scrollStart', this.updatePosition.bind(this));
-		 //        this.viewScroll.on('scroll', this.updatePosition.bind(this));
-		 //        this.viewScroll.on('scrollEnd', this.updatePosition.bind(this));
-			// }.bind(this), 200);
+				.velocity("transition.slideLeftIn", { stagger: 250 });
 
 			return this;
 		},
